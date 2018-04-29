@@ -1,12 +1,55 @@
 p {
-  font-size: 55px;
+  font-size: 10px;
 }
 
 body {
 
 }
 
+#content {
+    display:flex; 
+    align-items: flex-start; 
+    background-color: beige; 
+    width: 80%; 
+    margin: 0 auto; 
+    height: 250px; 
+}
+
+
+#sessionstoragedata {
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+    justify-content: space-around; 
+    background-color: aliceblue; 
+    width: 50%; 
+    height: 500px; 
+}
+
+#welcome{
+    display: flex;
+    align-items: center; 
+    flex-direction: column;
+    justify-content: space-around; 
+    width: 50%; 
+    background-color: aliceblue; 
+    height: 500px; 
+}
+
+
+
+.items {
+    padding: 1%; 
+    font-size: 22px; 
+}
+
+
+#detail {
+    visibility: hidden; 
+}
+
 #userDetails {
+  
   width:60%;
   height: 250px;
   margin: 0 auto;

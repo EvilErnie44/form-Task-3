@@ -28,7 +28,7 @@ function GetRaceList() {
         //Function called with the MODEL object passed in.
         //When this function is called, the variable which are passed in govern the scope of the loop which
         //iterates the items into the containers.
-        displayItemsInRaceList(model, 0,10);
+        displayItemsInRaceList(model, 0,100);
     }
 }
 
@@ -40,6 +40,9 @@ function buildRacesModel(arr) {
         var thisRace = new Race(arr[i]);
         //pushing value onto the array.
         model.push(thisRace);
+        
+        //local model needs to be update here
+        //session storage needs to be updated here.
     }
 }
 //Function which is bound to the race details element.
@@ -50,9 +53,18 @@ function getRaceById(id)
     for (var i = 0; i < model.length; i++) {
         var thisRace = model[i];
         if (thisRace.id == id) {
-            return thisRace;
+           //saveRunnerData();
+           return thisRace;
         }
     }
+}
+
+function addToFavourites(race)
+{
+  var id = race.id;
+  alert("Race " + id + " has been added for favourites")
+  runnerData.races.push(race);
+
 }
 //This is the instance of the race which is inside each index value of the array.
 //Building the object to populate the HTML with.
@@ -95,6 +107,7 @@ function displayItemsInRaceList(arr, startloop, numberofel) {
 //container underneath the list of races.
 //When this is ran can I also update the runnner OBJ instance to contained the clicked CELL.
 function displayDetail(race) {
+  console.log(race);
   //grabbing element to populate the output with.
     var element = document.getElementById("detail");
     //setting CSS style on the element.
@@ -107,6 +120,12 @@ function displayDetail(race) {
     document.getElementById("raceVenueName").innerHTML = race.venue_name;
     document.getElementById("raceStart").innerHTML = race.geoloc_start;
     document.getElementById("raceEnd").innerHTML = race.geoloc_end;
+
+    //anonymouse function wrapper required here!
+    document.getElementById("addtofavs").onclick = function (e) {
+        addToFavourites(race);
+    }
+    //addToFavourites(race);
 }
 
 
@@ -120,7 +139,7 @@ function start() {
 //refers to the event object itself and
 function getRaceDetail(e) {
     var thisRace = getRaceById(e.target.id);
-    displayDetail(thisRace); 
+    displayDetail(thisRace);
 }
 
 
@@ -128,6 +147,7 @@ function getRaceDetail(e) {
 ////////////////////////////////////////ALLL MY STUFFF HERE
 ////////////Controller
 window.onload = function() {
-    document.getElementById("30Races").onclick = start; 
-    parseFile(); 
+    document.getElementById("30Races").onclick = start;
+    parseFile();
+    addToFavourites;
 }

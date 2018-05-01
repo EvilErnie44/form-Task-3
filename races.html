@@ -1,57 +1,83 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>raceData</title>
- <link href= "Styles/style.css" rel="stylesheet"/>
-</head>
-<body>
-
-    <div id="flexWrap">
-
-        <div class="flexCont">
+   <head>
+      <meta charset="utf-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>raceData</title>
+      <link href= "Styles/style.css" rel="stylesheet"/>
+   </head>
+   <body>
+      <div id="flexWrap">
+         <div class="flexCont">
             <div class="flexItem">
-                <button id = "30Races">Click Here to Return Races</button>
-                <h2>List of races</h2>
-                <table id="raceList"></table>
-            </div>
-           <div class="flexItem">
-             <button id = "returnFavs">Show Registered Races</button>  
-              <div id = "favouritesList">
-                <h2>Your selected races</h2>
-                 <table id="showFavList">
-                </table>
-                </div>
+               <button id = "30Races">Click Here to Return Races</button>
+               <h2>List of races</h2>
+               <table id="raceList"></table>
             </div>
             <div class="flexItem">
-                <div id="detail">
-                    <h2>Race Detail</h2>
-                    <table>
-                        <tr>
-                        <td><p>Race ID: </p></td> <td><p id="raceId"></p></td>
-                        </tr>
-                        <tr>
-                        <td><p id="raceName"></p></td>
-                        </tr>
-                        <tr>
-                        <td><p>Race Distance: </p></td><td><p id="raceDistance"></p></td>
-                        </tr>
-                        <tr>
-                        <td><p>Race Venue: </p></td><td> <p id="raceVenueName"></p></td>
-                        </tr>
-                        <tr>
-                        <td><p>Start Position</p></td><td><p id="raceStart"></p></td>
-                        </tr>
-                        <tr>
-                        <td><p>End Position</p></td><td><p id="raceEnd"></p></td>
-                        </tr>
-                    </table>
-                    <button id ="addtofavs"> Add to Favourites </button>
-                </div>
+               <button id = "returnFavs">Show Registered Races</button>  
+               <div id = "favouritesList">
+                  <h2>Your selected races</h2>
+                  <table id="showFavList">
+                  </table>
+               </div>
+            </div>
+            <div class="flexItem">
+               <div id="detail">
+                  <h2>Race Detail</h2>
+                  <table>
+                     <tr>
+                        <td>
+                           <p>Race ID: </p>
+                        </td>
+                        <td>
+                           <p id="raceId"></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p id="raceName"></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p>Race Distance: </p>
+                        </td>
+                        <td>
+                           <p id="raceDistance"></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p>Race Venue: </p>
+                        </td>
+                        <td>
+                           <p id="raceVenueName"></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p>Start Position</p>
+                        </td>
+                        <td>
+                           <p id="raceStart"></p>
+                        </td>
+                     </tr>
+                     <tr>
+                        <td>
+                           <p>End Position</p>
+                        </td>
+                        <td>
+                           <p id="raceEnd"></p>
+                        </td>
+                     </tr>
+                  </table>
+                  <button id ="addtofavs"> Add to Favourites </button>
+               </div>
             </div>
          </div>
-</div>
-    <script src= "Script/model.js"></script>
-    <script src = "Script/returnRace.js"></script>
-    </body>    
+      </div>
+      <script src= "Script/model.js"></script>
+      <script src= "Script/view.js"></script>
+      <script src= "Script/controller.js"></script>
+   </body>

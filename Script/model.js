@@ -28,7 +28,6 @@ var rSurname = form.surName.value;
 var rGender = form.gender.value;
 var rDob = form.dateOfBirth.value;
 var runnerTitle = form.title.value;
-var favs = runnerData.races;
 
 alert("storelocal has been called");
 
@@ -70,12 +69,12 @@ function parseFile() {
 }
 
 function updateLocalObj(obj) {
-
+    
     alert("updating local object");
     //loop over parse indexes and update local obj
     //Nested loop maybe, using keys in object
     //but then how can I access current on inner outer loops key.
-
+    debugger;  
 //assinging  the global model of the object the reutrned properties of the parsed and converted
     //JSON String.
     console.log(obj);
@@ -85,10 +84,11 @@ runnerData.surName = obj.surName;
 runnerData.gender = obj.gender;
 runnerData.dateOfBirth = obj.dateOfBirth;
 runnerData.traNum = obj.traNum;
-
+runnerData.races = obj.races; 
 }
 
 function saveRunnerData() {
+  
   var returnedData = sessionStorage.getItem("runnerData");
   var prsObj = JSON.parse(returnedData);
   return updateLocalObj(prsObj);

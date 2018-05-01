@@ -64,8 +64,12 @@ function addToFavourites(race)
   var id = race.id;
   alert("Race " + id + " has been added for favourites")
   runnerData.races.push(race);
+  alert("adding to local storage"); 
+    console.log(runnerData); 
+  sessionStorage.setItem("runnerData", JSON.stringify(runnerData));
 
 }
+
 //This is the instance of the race which is inside each index value of the array.
 //Building the object to populate the HTML with.
 function Race(inObject) {
@@ -125,7 +129,7 @@ function displayDetail(race) {
     document.getElementById("addtofavs").onclick = function (e) {
         addToFavourites(race);
     }
-    //addToFavourites(race);
+
 }
 
 

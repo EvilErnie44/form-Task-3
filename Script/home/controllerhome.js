@@ -9,8 +9,8 @@ window.onload = function() {
    
 checkSessionStorage(); 
     //Assign items if them do. 
-    document.getElementById("register").onclick=loadRegistration;
-document.getElementById("next").onclick=loadRaceScreen;
+document.getElementById("register").onclick=loadRegistration;
+document.getElementById("next").onclick=checkFavourites; ;
 
 }
 

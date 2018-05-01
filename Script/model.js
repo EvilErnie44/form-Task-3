@@ -29,8 +29,6 @@ var rGender = form.gender.value;
 var rDob = form.dateOfBirth.value;
 var runnerTitle = form.title.value;
 
-alert("storelocal has been called");
-
 //How to target only the values in a loop?
 
 runnerData.title = rTitle;
@@ -69,12 +67,9 @@ function parseFile() {
 }
 
 function updateLocalObj(obj) {
-    
-    alert("updating local object");
     //loop over parse indexes and update local obj
     //Nested loop maybe, using keys in object
     //but then how can I access current on inner outer loops key.
-    debugger;  
 //assinging  the global model of the object the reutrned properties of the parsed and converted
     //JSON String.
     console.log(obj);
@@ -109,10 +104,12 @@ function checkSessionStorage() {
 
 
   if (data == undefined) {
-      let hideme = document.getElementById("next").style.visibility = "hidden";
-      alert("you are not registered");
+      document.getElementById("next").style.visibility = "hidden";
+      document.getElementById("welcomemsg").style.visibility = "hidden"; 
   } else if (data != undefined) {
-      let hideme = document.getElementById("register").style.visibility = "hidden";
+      document.getElementById("register").style.visibility = "hidden";
+      document.getElementById("registermsg").style.height = 0;
+      document.getElementById("registermsg").innerHTML = "";
       parseFile();
       populatelogin();
 
@@ -126,12 +123,21 @@ function loadRaceScreen() {
     location.assign("races.html");
 }
 
+function loadFavourites() {
+    location.assign("races.html");
+}
+
 function loadRegistration() {
 
     location.assign("capturedata.html");
 }
 
 function checkFavourites() {
-
-
+ alert("I am checking for favorites");
+   if(runnerData.races != "undefined") {
+       let name = runnerData.firstName; 
+       alert("Welcome Back " + name + " races have been found in your favourites"); 
+       loadFavourites(); 
+   }
+    
 }

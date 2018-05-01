@@ -9,6 +9,5 @@ document.getElementById("myForm").submitToLocal.onclick = storeInLocal;
 generateTRA; 
     //Check if items exist in session already. 
     //Assign items if them do. 
-document.getElementById("next").onclick=checkFavourites; 
    
 }

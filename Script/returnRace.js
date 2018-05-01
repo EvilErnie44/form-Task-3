@@ -64,7 +64,6 @@ function addToFavourites(race)
   var id = race.id;
   alert("Race " + id + " has been added for favourites")
   runnerData.races.push(race);
-  alert("adding to local storage"); 
     console.log(runnerData); 
   sessionStorage.setItem("runnerData", JSON.stringify(runnerData));
 
@@ -107,6 +106,28 @@ function displayItemsInRaceList(arr, startloop, numberofel) {
         document.getElementById(id).onclick = getRaceDetail;
     }
 }
+
+//pass in favourties object, 0 and then object length when called. 
+function displayFavouritesList(arr, startloop, numberofel) {
+  //grabs target ID
+    var table = document.getElementById("showFavList");
+    //sets inner to be blank.
+    table.innerHTML = "";
+    //loops over maximum value of the array.
+    for (var i = startloop; i < startloop + numberofel ; i++) {
+      //creates elements to populate on each iteration.
+        var row = table.insertRow(0);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        //Setting cell 1 values.
+        cell1.innerHTML = arr[i].race_name;
+        var id = arr[i].id;
+        //Setting cell 2 values.
+        cell2.innerHTML = "Race ID" + id;
+        //identifies which ID has been clicked.
+    }
+}
+
 //function populate the output WITH SPECIFIC RACE DETAILS. In
 //container underneath the list of races.
 //When this is ran can I also update the runnner OBJ instance to contained the clicked CELL.
@@ -146,12 +167,17 @@ function getRaceDetail(e) {
     displayDetail(thisRace);
 }
 
-
+function passFavsIntoList(){
+    var object = runnerData.races; 
+    displayFavouritesList(object, 0, 100); 
+}
 
 ////////////////////////////////////////ALLL MY STUFFF HERE
 ////////////Controller
 window.onload = function() {
     document.getElementById("30Races").onclick = start;
+    document.getElementById("returnFavs").onclick = passFavsIntoList; 
     parseFile();
+    addToFavourites;
     addToFavourites;
 }

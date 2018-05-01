@@ -1,9 +1,12 @@
-p {
-  font-size: 10px;
-}
+
 
 body {
 
+}
+
+#detail{
+    font-size: 18px; 
+    padding-top: 20px; 
 }
 
 #content {
@@ -36,11 +39,36 @@ body {
     height: 500px; 
 }
 
+#flexWrap {
+    display:flex;
+    align-items: flex-start; 
+    flex-direction: row; 
+    background-color: aliceblue; 
+    width: 100%; 
+    margin: 0 auto; 
+    height: auto; 
+    
+}
+
+.flexCont{
+    display:flex;
+    align-items: flex-start; 
+    flex-direction: row; 
+    justify-content:space-between;  
+    background-color: aliceblue; 
+    width: 80%; 
+    margin: 0 auto; 
+    height: auto; 
+}
+
+.flexItem{
+    padding:2px; 
+}
 
 
 .items {
     padding: 1%; 
-    font-size: 22px; 
+    font-size: 20px; 
 }
 
 

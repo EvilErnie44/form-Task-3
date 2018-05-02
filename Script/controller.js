@@ -1,16 +1,16 @@
+//This is the controller for the remaining page which returns the race results and stores the
+//favourites.
+//using windows on load event to declare the functions and flow of them on start up.
 window.onload = function() {
-    //Check user exists in local
-    //If no user exists Capture user store to session.
-    //If user exists, check favourites.   
-    //SO form captures data on click. 
-    //generates str for TRA
-    generateTRA;
-    //Check if items exist in session already. 
-    //Assign items if them do. 
+    //function bound to target element event, function returns races.
     document.getElementById("30Races").onclick = start;
+    //function bound on target element event. function updates view with favourites.
     document.getElementById("returnFavs").onclick = passFavsIntoList;
+    //run parse file to ensure my clients model is the same as the session storage date.
     parseFile();
+    //function declaration,responsibile for updating the local model of favourites to reflect session storage data.
     addToFavourites;
-    document.getElementById("myForm").submitToLocal.onclick = storeInLocal;
+    //binding function to forms on click event.
+    //document.getElementById("myForm").submitToLocal.onclick = storeInLocal;
 
 }

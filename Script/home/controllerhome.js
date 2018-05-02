@@ -1,15 +1,12 @@
+//This is the controller for the home page.
+//using windows on load event to bind the functions and flow of them on start up.
 window.onload = function() {
-    //Check user exists in local
-    //If no user exists Capture user store to session.
-    //If user exists, check favourites.
-
-    //Check if items exist in session already.
-
-    ///These needs to be passed in once check complete and positive.  
-
+    //first function which the page runs, this checks the session storage data to
+    //see if anything is current stored in it.
     checkSessionStorage();
-    //Assign items if them do. 
+    //binding the function which changes the view if data exists already.
     document.getElementById("register").onclick = loadRegistration;
-    document.getElementById("next").onclick = checkFavourites;;
+    //binding the function which checks favourites when a user clicks next. 
+    document.getElementById("next").onclick = checkFavourites;
 
 }
